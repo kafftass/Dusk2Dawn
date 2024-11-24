@@ -2,10 +2,7 @@
 
 Minimal Arduino library for sunrise and sunset time.
 
-Given some basic data, such as geographic coordinates and a date, an estimate time of [*apparent* sunrise or sunset](https://www.esrl.noaa.gov/gmd/grad/solcalc/glossary.html#apparentsunrise) is returned in **minutes elapsed since midnight**.
-
-**WARNING**: This is an unauthorized port of [NOAA's Solar Calculator](https://www.esrl.noaa.gov/gmd/grad/solcalc/),
-hence the package will remain unlicensed. *Use at your own risk!*
+Given some basic data, such as geographic coordinates and a date, an estimate time of [*apparent* sunrise or sunset](https://www.esrl.noaa.gov/gmd/grad/solcalc/glossary.html#apparentsunrise) is returned in **minutes elapsed since midnight**. This is a paired down port of the [NOAA Solar Calculator](https://www.esrl.noaa.gov/gmd/grad/solcalc/).
 
 ## Installation
 ### From the Library Manager
@@ -24,13 +21,13 @@ hence the package will remain unlicensed. *Use at your own risk!*
    *
    *  The first two must be in decimal degrees (DD), e.g. 10.001, versus the
    *  more common degrees, minutes, and seconds format (DMS), e.g. 10° 00′ 3.6″.
-   *  The time zone offset can be expressed in float in the few cases where the
-   *  the zones are offset by 30 or 45 minutes, e.g. "5.75" for Nepal Standard
-   *  Time.
+   *  The time zone offset can be expressed in decimal fractions, e.g. "5.75"
+   *  for Nepal Standard Time, in the few cases where the zones are offset by 30
+   *  or 45 minutes.
    *
-   *  HINT: An easy way to find the longitude and latitude for any location is
-   *  to find the spot in Google Maps, right click the place on the map, and
-   *  select "What's here?". At the bottom, you’ll see a card with the
+   *  HINT: An easy way to find the longitude and latitude for any arbitrary
+   *  location is to find the spot in Google Maps, right click the place on the
+   *  map, and select "What's here?". At the bottom, you’ll see a card with the
    *  coordinates.
    */
   Dusk2Dawn losAngeles(34.0522, -118.2437, -8);
@@ -89,6 +86,5 @@ hence the package will remain unlicensed. *Use at your own risk!*
 ```
 
 ## History
-- **2019-6-18**: Add license warning.
 - **2017-2-9**: Bug fix.
 - **2017-2-3**: Released.

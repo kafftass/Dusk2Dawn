@@ -1,5 +1,5 @@
 /*  Dusk2Dawn.h
- *  Get time of sunrise and sunset.
+ *  Get estimate time of sunrise and sunset given a set of coordinates.
  *  Created by DM Kishi <dm.kishi@gmail.com> on 2017-02-01.
  *  <https://github.com/dmkishi/Dusk2Dawn>
  */
@@ -8,7 +8,7 @@
 #define Dusk2Dawn_h
 
   #include "Arduino.h"
-  #include <math.h>
+  #include <Math.h>
 
   class Dusk2Dawn {
     public:
@@ -16,6 +16,7 @@
       int sunrise(int, int, int, bool);
       int sunset(int, int, int, bool);
       static bool min2str(char*, int);
+        byte bmin(int),bhour(int);
     private:
       float _latitude, _longitude;
       int   _timezone;

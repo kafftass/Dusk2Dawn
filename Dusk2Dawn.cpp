@@ -1,11 +1,11 @@
 /*  Dusk2Dawn.cpp
- *  Get time of sunrise and sunset.
+ *  Get estimate time of sunrise and sunset given a set of coordinates.
  *  Created by DM Kishi <dm.kishi@gmail.com> on 2017-02-01.
  *  <https://github.com/dmkishi/Dusk2Dawn>
  */
 
 #include "Arduino.h"
-#include <math.h>
+#include <Math.h>
 #include "Dusk2Dawn.h"
 
 
@@ -32,7 +32,19 @@ int Dusk2Dawn::sunset(int y, int m, int d, bool isDST) {
   return sunriseSet(false, y, m, d, isDST);
 }
 
+byte Dusk2Dawn::bhour(int elminuto) {
 
+   float floatHour   = elminuto / 60.0;
+   return (byte) floatHour;
+}
+
+byte Dusk2Dawn::bmin(int elminuto) {
+
+   float floatHour   = elminuto / 60.0;
+   float floatMinute = 60.0 * (floatHour - floor(floatHour));
+   return (byte) floatMinute;
+}
+ 
 /* Convert minutes elapsed since midnight, the figure returned by the public
  * methods sunrise() and sunset(), to a 24-hour clock format, e.g. "23:00".
  *
